@@ -196,7 +196,7 @@ jobs:
         run: |
           if [ "$RELEASE_OUTCOME" = "success" ]; then
             echo "GitHub Release publishing succeeded."
-            RELEASE_INFO=$(gh release view "$TAG" --json url,tagName,title,assets)
+            RELEASE_INFO=$(gh release view "$TAG" --json url,tagName,name,assets)
             RELEASE_URL=$(echo "$RELEASE_INFO" | jq -r .url)
 
             echo "Release Tag: $TAG"
